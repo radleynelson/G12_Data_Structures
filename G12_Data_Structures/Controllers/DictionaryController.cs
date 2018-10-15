@@ -8,6 +8,7 @@ namespace G12_Data_Structures.Controllers
 {
     public class DictionaryController : Controller
     {
+        //declare variables
         public static Dictionary<string, int> myDicitonary = new Dictionary<string, int>();
         public static string SearchResults;
         public static int dictValue;
