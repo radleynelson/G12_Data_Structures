@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DataStructures</title>
+    
+
+    <environment include="Development">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css" />
+        <link rel="stylesheet" href="~/Content/Site.css" />
+        <link rel="stylesheet" href="~/Content/MyStles.css" />
+
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css" />
+        <link rel="stylesheet" href="~/Content/Site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/Content/MyStles.css" />
+    </environment>
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="https://i2.wp.com/mydevgeek.com/wp-content/uploads/2017/03/social_graph-512.png" width="55" />
+            </a>
+
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item">
+                    Home
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Data Structures
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a href="/Dictionary" class="navbar-item">
+                            Dictionary
+                        </a>
+                        <a href="/Stack" class="navbar-item">
+                            Stack
+                        </a>
+                        <a href="/Queue" class="navbar-item">
+                            Queue
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+    </nav>
+
+
+    <partial name="_CookieConsentPartial" />
+
+    <h1 style="
+    letter-spacing: 5px;
+    text-transform: capitalize;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+" class="is-size-3">
+        Data Structures
+    </h1>
+    <div class="container body-content" style='margin-left:0'>
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2018 - DataStructures</p>
+        </footer>
+    </div>
+
+    <environment include="Development">
+        <script src="~/Scripts/app.js"></script>
+    </environment>
+    <environment exclude="Development">
+
+        <script src="~/Scripts/app.js"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

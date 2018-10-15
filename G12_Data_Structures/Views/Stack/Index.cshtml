@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "Stack";
+}
+
+@if (ViewBag.Search != null && ViewBag.Search == "t")
+{
+    <div id='notify' class="notification is-success notify">The Value 3 was found and it took @ViewBag.StopWatch seconds to find it</div>
+}
+@if (ViewBag.Search != null && ViewBag.Search == "f")
+{
+    <div id='notify' class="notification is-danger notify">The Value 3 was not found and it took @ViewBag.StopWatch seconds to find out</div>
+}
+@if (ViewBag.DisplayModel == true)
+{
+    <div id='modalDisplay' class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content section">
+            <div class="container">
+                <table class="table is-bordered">
+                    <thead>
+                        <tr>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (int iVal in ViewBag.Stack)
+                        {
+                            <tr>
+                                <td> @iVal </td>
+                            </tr>
+
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        <button class="modal-close is-large" onclick="clearModal()" aria-label="close"></button>
+    </div>
+}
+
+<div class="columns">
+    <div class="column is-one-third boxed">
+        <aside style="padding-left:20px" class="menu">
+            <p class="menu-label is-size-5">
+                @ViewBag.Title
+            </p>
+            <ul class="menu-list">
+                <li>
+                    <a href="@Url.Action("AddOne", "Stack")" class="w3-bar-item w3-button">1. Add one item to @ViewBag.Title</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("AddHugeList", "Stack")" class="w3-bar-item w3-button">2. Add huge list to @ViewBag.Title</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Display", "Stack")" class="w3-bar-item w3-button">3. Display @ViewBag.Title</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("DeleteFrom", "Stack")" class="w3-bar-item w3-button">4. Delete from @ViewBag.Title</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Clear", "Stack")" class="w3-bar-item w3-button">5. Clear @ViewBag.Title</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Search", "Stack")" class="w3-bar-item w3-button">6. Search @ViewBag.Title</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "Home")" class="w3-bar-item w3-button">7. Return to Main Menu @ViewBag.Title</a>
+                </li>
+
+            </ul>
+        </aside>
+    </div>
+    <div class="is-two-thirds display">
+        <ul>
+            @foreach (int iVal in ViewBag.Stack)
+            {
+                <li><span class="is-bold">Value</span>: @iVal </li>
+            }
+        </ul>
+    </div>
+</div>
+
+@if (ViewBag.Search != null)
+{
+    <script>
+         setTimeout(function () {
+        document.getElementById('notify').style.display = 'none';
+    }, 5000);
+
+    </script>
+}
+
+@if (ViewBag.DisplayModel == true)
+{
+    <script>
+        document.getElementById('modalDisplay').style.display = 'block';
+        function clearModal()
+        {
+            document.getElementById('modalDisplay').style.display = 'none';
+        }
+    </script>
+
+}
+

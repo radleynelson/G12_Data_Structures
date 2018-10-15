@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="columns">
+    <div class="column is-one-third boxed">
+        <aside class="menu">
+            <p class="menu-label">
+                Menu
+            </p>
+            <ul class="menu-list">
+                <li>
+                    <a href="@Url.Action("Index", "Stack")" class="w3-bar-item w3-button">Stack</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "Queue")" class="w3-bar-item w3-button">Queue</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "Dictionary")" class="w3-bar-item w3-button">Dictionary</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Exit", "Home")" class="w3-bar-item w3-button">Exit</a>
+                </li>
+
+            </ul>
+        </aside>
+    </div>
+</div>

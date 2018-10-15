@@ -1,0 +1,15 @@
+﻿.list {
+    color: white;
+}
+
+.notify {
+    margin: auto;
+    margin-bottom: 25px;
+    width: 35%;
+}
+
+.boxed {
+    border: navy solid 2px;
+    height: fit-content;
+    background: navy;
+}
