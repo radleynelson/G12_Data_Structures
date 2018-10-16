@@ -8,11 +8,13 @@ namespace DataStructures.Controllers
 {
     public class HomeController : Controller
     {
+        //Home Action to show homepage
         public ActionResult Index()
         {
             return View();
         }
 
+        //Exit to BYU page
         public ActionResult Exit()
         {
             return Redirect("https://www.byu.edu/");
