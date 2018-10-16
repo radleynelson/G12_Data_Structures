@@ -8,6 +8,7 @@ namespace DataStructures.Controllers
 {
     public class QueueController : Controller
     {
+        //initializes queue variables
         public static Queue<int> myQueue = new Queue<int>();
         public static string SearchResults;
         public static int queueValue;
